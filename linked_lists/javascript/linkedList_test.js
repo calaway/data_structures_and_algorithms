@@ -5,36 +5,36 @@ describe('LinkedList', function() {
     list = new List();
   });
 
-  it.skip('should start with zero elements', function() {
+  it('should start with zero elements', function() {
     expect(list._length).to.eq(0);
   });
 
-  it.skip('should set its default head to null', function(){
+  it('should set its default head to null', function(){
     expect(list.head).to.eq(null);
   });
 
   describe('.push', function(){
     context('with a single element', function(){
-      it.skip('should allow push of a single element to a list', function(){
+      it('should allow push of a single element to a list', function(){
         list.push('pizza');
         expect(list.head.data).to.eq('pizza');
       });
 
-      it.skip('should increment the _length of the list', function(){
+      it('should increment the _length of the list', function(){
         list.push('pizza');
         expect(list._length).to.eq(1);
       });
     });
 
     context('with multiple elements', function(){
-      it.skip('should increment the length count', function(){
+      it('should increment the length count', function(){
         list.push('pizza');
         list.push('stromboli');
         list.push('mushroom');
         expect(list._length).to.eq(3);
       });
 
-      it.skip('should assign the head to the first element pushed', function(){
+      it('should assign the head to the first element pushed', function(){
         expect(list.head).to.eq(null);
         list.push('pizza');
         expect(list.head.data).to.eq('pizza');
@@ -42,13 +42,13 @@ describe('LinkedList', function() {
         expect(list.head.data).to.eq('pizza');
       });
 
-      it.skip('should attach the second element to the first element', function(){
+      it('should attach the second element to the first element', function(){
         list.push('pizza');
         list.push('stromboli');
         expect(list.head.nextNode.data).to.eq('stromboli');
       });
 
-      it.skip('should attach nextNodes in sequential order', function(){
+      it('should attach nextNodes in sequential order', function(){
         list.push('pizza');
         list.push('stromboli');
         list.push('mushroom');
@@ -63,29 +63,29 @@ describe('LinkedList', function() {
 
   describe('.pop', function(){
     context('with no elements', function(){
-      it.skip('should return null', function(){
+      it('should return null', function(){
         expect(list.pop()).to.eq(null);
       });
 
-      it.skip('should not decrement the _length', function(){
+      it('should not decrement the _length', function(){
         expect(list._length).to.eq(0);
       });
     });
 
     context('with one element', function(){
-      it.skip('should change the _length', function(){
+      it('should change the _length', function(){
         list.push('hello');
         var result = list.pop();
         expect(list._length).to.eq(0);
       });
 
-      it.skip('should set the list head to null', function(){
+      it('should set the list head to null', function(){
         list.push('hello');
         var result = list.pop();
         expect(list.head).to.eq(null);
       });
 
-      it.skip('should return the last element', function(){
+      it('should return the last element', function(){
         list.push('hello');
         var result = list.pop();
         expect(result.data).to.eq('hello');
@@ -93,7 +93,7 @@ describe('LinkedList', function() {
     });
 
     context('with multiple elements', function(){
-      it.skip('should return the last element from the list', function(){
+      it('should return the last element from the list', function(){
         list.push("hello");
         list.push("new");
         list.push("world");
@@ -103,7 +103,7 @@ describe('LinkedList', function() {
         expect(output.data).to.eq('today');
       });
 
-      it.skip('should remove the last element from the list', function(){
+      it('should remove the last element from the list', function(){
         list.push("hello");
         list.push("world");
         list.push("today");
@@ -127,7 +127,7 @@ describe('LinkedList', function() {
 
   describe('.delete', function(){
     context('with one node', function(){
-      it.skip('deletes a solo node', function(){
+      it('deletes a solo node', function(){
         list.push('hello');
         list.delete('hello');
         expect(list._length).to.eq(0);
